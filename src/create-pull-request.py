@@ -230,7 +230,7 @@ event_name = os.environ["GITHUB_EVENT_NAME"]
 event_data = get_github_event(os.environ["GITHUB_EVENT_PATH"])
 
 # Set the repo to the working directory
-repo = Repo(os.getcwd())
+repo = Repo(os.getcwd(), search_parent_directories=True)
 # Get the default for author email and name
 author_email, author_name = get_author_default(event_name, event_data)
 # Set commit author overrides
